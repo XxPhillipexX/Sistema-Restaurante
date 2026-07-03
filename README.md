@@ -38,11 +38,17 @@ O ecossistema do banco de dados está preparado para lidar com relacionamentos c
 
 ## 🔧 Como Executar o Projeto Localmente
 
-### Pré-requisitos
-* Servidor local Apache com suporte a PHP 7.4 ou superior (XAMPP, WAMP, Laragon).
-* SGBD MySQL.
+### 📋 Pré-requisitos
+Antes de começar, você vai precisar das seguintes ferramentas instaladas em sua máquina:
+* Servidor local Apache com **PHP 7.4** ou superior (Recomendado: [XAMPP](https://www.apachefriends.org/), WAMP ou Laragon).
+* Sistema Gerenciador de Banco de Dados **MySQL / MariaDB**.
+* Um editor de código (como o VS Code) e o [Git](https://git-scm.com/).
 
-### Passo a Passo
-1. **Clonar o repositório:**
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
+---
+
+### 🛠️ Passo a Passo
+
+#### 1. Clonar o Repositório
+Navegue até a pasta raiz do seu servidor local (ex: `C:\xampp\htdocs\` no XAMPP ou `/var/www/html/` no Linux) e abra o terminal. Execute o comando:
+```bash
+git clone https://github.com/XxPhillipexX/Sistema-Restaurante.git
