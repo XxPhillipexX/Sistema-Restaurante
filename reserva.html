@@ -1,0 +1,469 @@
+
+<html>
+<html lang="pt-BR"> <!-- Define o idioma principal da página como Português do Brasil -->
+
+<head>
+  <!-- Define a codificação de caracteres como UTF-8 -->
+  <meta charset="UTF-8" />
+  
+  <!-- Define que o layout será responsivo em dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- Título da aba do navegador -->
+  <title>Reserva | Essência Mineira</title>
+  
+  <!-- Importa a fonte Cabin do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  <!-- Início da área de estilo CSS -->
+  <style>
+    /* Define padrão de box-sizing e remove margens/paddings globais */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* Estilo do corpo da página */
+    body {
+      font-family: "Cabin", sans-serif; /* Fonte */
+      background-image: url('Reserva/Adega.jpg'); /* Imagem de fundo */
+      background-size: cover; /* Imagem cobre toda a tela */
+      background-position: center; /* Centraliza a imagem */
+      background-attachment: fixed; /* Imagem fixa ao rolar */
+      color: #333; /* Cor do texto */
+    }
+
+    /* Estilo do cabeçalho */
+    header {
+    background-image: url("Imagens Início/header.jpg");
+    background-size: cover;
+    color: #be5a20;
+    position: fixed;
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;
+    z-index: 9999;
+    }
+
+    .logo{
+    padding: 0;
+    width: 7rem;
+    height: 7rem;
+    }
+
+    .logo-nome {
+    display: flex;
+    flex-direction: row;
+    }
+
+    header div.nome p {
+    padding: 0;
+    color: #be5a20;
+    }
+
+    nav {
+    display: flex;
+    flex-direction: column;
+    top: auto;
+    bottom: auto;
+}
+a {
+    text-decoration: none;
+    color: #f0cda0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: color 0.3s ease;
+}
+a:hover {
+    border: 3px solid #ca571d;
+    background-color: #ca571d;
+    border-radius: 8px;
+    color: #3c1701;
+}
+
+    /* Seção de destaque inicial */
+    .hero {
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semitransparente */
+      padding: 100px 20px 50px; /* Espaçamento */
+      padding-top: 160px;
+      color: #fff; /* Texto branco */
+      text-align: center; /* Texto centralizado */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra no texto */
+    }
+
+    .hero h2 { font-size: 3em; margin-bottom: 15px; } /* Título da seção destaque */
+    .hero p { font-size: 1.4em; } /* Parágrafo de descrição */
+
+    .container {
+      max-width: 900px; /* Largura máxima */
+      margin: 0 auto; /* Centraliza */
+      padding: 40px 20px; /* Espaçamento interno */
+    }
+
+    /* Seção do formulário de reserva */
+    section#reserva {
+      background-color: rgba(255, 255, 255, 0.95); /* Branco com transparência */
+      padding: 2rem;
+      border-radius: 12px; /* Cantos arredondados */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra leve */
+      max-width: 600px; /* Largura do formulário */
+      margin: 0 auto; /* Centraliza */
+    }
+
+    /* Título da seção */
+    h2 {
+      font-size: 2.2em;
+      color: #be5a20; /* Marrom escuro */
+      margin-bottom: 25px;
+      text-align: center;
+      position: relative; /* Para o elemento decorativo abaixo */
+    }
+
+    /* Linha decorativa abaixo do título */
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -8px;
+      width: 60px;
+      height: 3px;
+      background-color: #CD853F; /* Dourado */
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input, textarea { background: #f4f4f4; }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #CD853F;
+      box-shadow: 0 0 0 3px rgba(205, 133, 63, 0.3);
+    }
+
+    button {
+      background-color: #A0522D;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover { background-color: #CD853F; }
+    .btn-nav {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 0.95em;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 8px;
+      background: transparent;
+      overflow: hidden;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1;
+      transition: color 0.4s ease-in-out;
+    }
+    .btn-nav::before,
+    .btn-nav::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, #a0522d, #cd853f, #a0522d);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+      border-radius: 8px;
+    }
+    .btn-nav::after {
+      transform-origin: right;
+    }
+    .btn-nav:hover::before {
+      transform: scaleX(1);
+    }
+    .btn-nav:hover {
+      color: #fff;
+      animation: sutilShake 0.3s ease-in-out;
+    }
+
+    .preview img {
+      max-width: 150px;
+      margin-top: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      background-color: #8B4513;
+      color: #fff;
+      text-align: center;
+      padding: 25px 0;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      .hero h2 { font-size: 2.2em; }
+      .hero p { font-size: 1.1em; }
+      h2 { font-size: 1.8em; }
+    }
+    .voltar {
+      position: absolute; /* Posição absoluta dentro do header */
+            top: 50%; /* Centraliza verticalmente */
+            right: 1rem; /* AGORA ESTÁ AQUI: Margem da direita */
+            transform: translateY(-50%); /* Ajuste para centralização vertical perfeita */
+            z-index: 1001; /* Garante que o botão fique acima de outros elementos se houver sobreposição */
+            padding: 0;
+            margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho do site com nome do restaurante -->
+  <header>
+    <div class="logo-nome">
+        <img class="logo" src="Imagens Início/Logo EM.png" alt="logo">
+          <div class="nome">
+            <h1>Essência Mineira</h1>
+            <p>Restaurante Mineiro de Verdade</p>
+          </div>
+    </div>
+    <div class="nav">
+            <nav>
+                <div class="voltar">
+                <a href="restaurante.html"><strong>⇦</strong></a>
+                </div>
+            </nav>
+            </div>
+  </header>
+
+  <!-- Seção inicial com mensagem de boas-vindas -->
+  <section class="hero">
+    <h2>Faça sua Reserva</h2>
+    <p>Garanta sua mesa com conforto e praticidade.</p>
+  </section>
+
+  <!-- Container principal do conteúdo -->
+  <div class="container">
+    <section id="reserva">
+      <h2>Reserva de Mesa</h2>
+      <!-- Início do formulário de reserva -->
+      <form id="form-reserva" onsubmit="enviarReserva(event)">
+        <!-- Campos obrigatórios -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" maxlength="15" placeholder="(XX) XXXXX-XXXX" required>
+
+        <label for="data">Data da Reserva:</label>
+        <input type="date" id="data" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" required>
+
+        <label for="pessoas">Número de Pessoas:</label>
+        <input type="number" id="pessoas" min="1" required>
+
+        <!-- Campo opcional -->
+        <label for="mensagem">Observações:</label>
+        <textarea id="mensagem" rows="4"></textarea>
+
+        <!-- Campo para upload de imagem -->
+        <label for="imagem">Imagem opcional:</label>
+        <input type="file" id="imagem" accept="image/*">
+
+        <!-- Pré-visualização da imagem -->
+        <div class="preview" id="preview">
+          <img id="previewImg" src="#" alt="Pré-visualização" style="display: none;">
+        </div>
+
+        <!-- Botões de ação -->
+        <button type="submit">Enviar Reserva</button>
+        <button type="button" onclick="gerarPDF()">Baixar PDF</button>
+        <button type="button" onclick="novaReserva()">Fazer Nova Reserva</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Rodapé com direitos -->
+  <footer>
+    &copy; 2025 Essência Mineira. Todos os direitos reservados.
+  </footer>
+
+  <!-- Importação da biblioteca jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    // Envia a reserva com validações
+    function enviarReserva(e) {
+      e.preventDefault(); // Evita que a página recarregue
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+      const pessoas = document.getElementById('pessoas').value;
+
+      // Verifica se o e-mail é válido
+      if (!email.includes('@') || !email.includes('.')) {
+        alert("Por favor, insira um e-mail válido com '@' e '.'");
+        return;
+      }
+
+      // Verifica se o telefone possui 11 dígitos numéricos
+      const telefoneNumeros = telefone.replace(/\D/g, '');
+      if (telefoneNumeros.length !== 11) {
+        alert("Por favor, insira um telefone válido com 11 dígitos (ex: (11) 91234-5678)");
+        return;
+      }
+
+      // Alerta com os dados preenchidos
+      alert(`Reserva enviada com sucesso!\n\nNome: ${nome}\nTelefone: ${telefone}\nData: ${data} às ${hora}\nPessoas: ${pessoas}`);
+    }
+
+    // Formata o campo de telefone automaticamente
+    document.getElementById('telefone').addEventListener('input', function (e) {
+      let input = e.target.value.replace(/\D/g, '');
+      if (input.length > 11) input = input.slice(0, 11);
+
+      if (input.length > 6) {
+        e.target.value = `(${input.slice(0, 2)}) ${input.slice(2, 7)}-${input.slice(7)}`;
+      } else if (input.length > 2) {
+        e.target.value = `(${input.slice(0, 2)}) ${input.slice(2)}`;
+      } else {
+        e.target.value = input;
+      }
+    });
+
+    // Mostra a pré-visualização da imagem escolhida
+    document.getElementById('imagem').addEventListener('change', function(event) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        const img = document.getElementById('previewImg');
+        img.src = reader.result;
+        img.style.display = 'block';
+      }
+      if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    });
+
+    // Gera um PDF com os dados da reserva
+    function gerarPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const telefone = document.getElementById('telefone').value;
+      const data = document.getElementById('data').value;
+      const hora = document.getElementById('hora').value;
+      const pessoas = document.getElementById('pessoas').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const imagemInput = document.getElementById('imagem');
+
+      // Cabeçalho do PDF
+      doc.setFillColor(111, 78, 55);
+      doc.rect(0, 0, 210, 30, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(20);
+      doc.setFont('helvetica', 'bold');
+      doc.text("Essência Mineira - Confirmação de Reserva", 15, 20);
+
+      // Adiciona imagem se houver
+      if (imagemInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const imgData = e.target.result;
+          doc.addImage(imgData, 'JPEG', 75, 35, 60, 40);
+          preencherConteudo(80);
+          doc.save("reserva.pdf");
+        };
+        reader.readAsDataURL(imagemInput.files[0]);
+      } else {
+        preencherConteudo(40);
+        doc.save("reserva.pdf");
+      }
+
+      // Preenche o conteúdo do PDF
+      function preencherConteudo(startY) {
+        let y = startY;
+
+        doc.setTextColor(80);
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        const hoje = new Date();
+        const dataHora = hoje.toLocaleString('pt-BR');
+        doc.text(`Data / Hora da Geração`, 15, y);
+        doc.setFont('helvetica', 'bold');
+        doc.text(dataHora, 15, y + 6);
+        y += 16;
+
+        doc.setDrawColor(200);
+        doc.line(15, y, 195, y);
+        y += 10;
+
+        doc.setFont('helvetica', 'bold'); doc.text("Nome:", 15, y); doc.setFont('helvetica', 'normal'); doc.text(nome, 50, y); y += 8;
+        doc.setFont('helvetica', 'bold'); doc.text("Email:", 15, y); doc.setFont('helvetica', 'normal'); doc.text(email, 50, y); y += 8;
+        doc.setFont('helvetica', 'bold'); doc.text("Telefone:", 15, y); doc.setFont('helvetica', 'normal'); doc.text(telefone, 50, y); y += 8;
+        doc.setFont('helvetica', 'bold'); doc.text("Data da Reserva:", 15, y); doc.setFont('helvetica', 'normal'); doc.text(data, 60, y); y += 8;
+        doc.setFont('helvetica', 'bold'); doc.text("Hora:", 15, y); doc.setFont('helvetica', 'normal'); doc.text(hora, 50, y); y += 8;
+        doc.setFont('helvetica', 'bold'); doc.text("Número de Pessoas:", 15, y); doc.setFont('helvetica', 'normal'); doc.text(pessoas, 70, y); y += 10;
+
+        // Se houver mensagem, inclui no PDF
+        if (mensagem) {
+          doc.setFont('helvetica', 'bold'); doc.text("Observações:", 15, y);
+          doc.setFont('helvetica', 'normal');
+          doc.text(doc.splitTextToSize(mensagem, 160), 15, y + 6);
+          y += 20;
+        }
+
+        doc.setDrawColor(200);
+        doc.line(15, y, 195, y); y += 10;
+
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(0, 120, 0);
+        doc.text("Situação:", 15, y);
+        doc.setFont('helvetica', 'normal');
+        doc.text("Reserva realizada com sucesso", 45, y);
+      }
+    }
+
+    // Reseta o formulário e a imagem
+    function novaReserva() {
+      const form = document.getElementById('form-reserva');
+      form.reset(); // Limpa todos os campos
+      const img = document.getElementById('previewImg');
+      img.src = "#"; // Limpa a imagem
+      img.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

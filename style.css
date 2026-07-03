@@ -1,0 +1,32 @@
+/* estilo simples para o restaurante (colar no arquivo estilo.css) */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Inter, Arial, sans-serif; }
+body { background:#1c140d url('') center/cover fixed no-repeat; color:#f5f2e9; display:flex; align-items:center; justify-content:center; min-height:100vh; padding:30px; }
+.card { background: rgba(20,14,10,0.85); padding: 30px; border-radius: 14px; width: 100%; max-width: 820px; border:2px solid #443621; box-shadow:0 10px 30px rgba(0,0,0,0.6); }
+h1,h2 { color:#c9a44b; font-family: "Cormorant Garamond", serif; text-align:center; margin-bottom:16px; }
+label { color:#e6d8b8; display:block; margin-top:12px; }
+input, select, textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #443621; background:#2a2218; color:#f5f2e9; margin-top:6px; }
+.btn { 
+    display: block; /* Mudar para 'block' para ocupar 100% da largura e aceitar margens */
+    padding:12px 16px; 
+    background:#c9a44b; 
+    color:#2d1f0c; 
+    border:none; 
+    border-radius:8px; 
+    font-size:16px; 
+    font-weight:bold; 
+    cursor:pointer; 
+    transition:background 0.3s; 
+    margin-top:20px; 
+    width:100%; /* Garantir largura total */
+    max-width:300px; /* Limitar o tamanho do botão para não ficar muito largo */
+    
+    /* 🏆 NOVO: Centraliza o botão */
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn:hover { background:#e5c97c; }
+.table { width:100%; border-collapse: collapse; margin-top:14px; }
+.table th { background: rgba(255,215,0,0.12); color:#fff; padding:10px; text-align:center; }
+.table td { padding:10px; text-align:center; border-top:1px solid rgba(255,255,255,0.03);}
+.link { color:#c9a44b; text-decoration:none; display:block; text-align:center; margin-top:12px; }
+

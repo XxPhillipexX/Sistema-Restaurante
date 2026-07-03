@@ -1,0 +1,267 @@
+/* =============================== */
+/*      ESSÊNCIA MINEIRA PREMIUM   */
+/*   Painel Administrativo Deluxe  */
+/* =============================== */
+
+@import url('https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=800');
+
+/* ---------- PALETA ---------- */
+:root {
+    --fundo-amadeirado: #18120c;
+    --painel-fundo: rgba(22,17,12,0.85);
+    --painel-blur: 6px;
+
+    --dourado: #c9a44b;
+    --dourado-claro: #e5c97c;
+    --texto: #f5f2e9;
+
+    --card-fundo: rgba(40,30,22,0.75);
+    --card-borda: #6d583e;
+
+    --input-fundo: #2a2218;
+    --input-borda: #55422e;
+
+    --btn-texto: #2d1f0c;
+    --danger: #b74a4a;
+}
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- BODY ---------- */
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--texto);
+    background:
+        url("https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=800")
+        center/cover no-repeat fixed,
+        linear-gradient(#1c140d, #0f0c0a);
+    background-blend-mode: multiply;
+}
+
+/* ---------- TOPO ---------- */
+.top-bar {
+    background: rgba(20, 15, 10, 0.9);
+    border-bottom: 2px solid var(--dourado);
+    padding: 18px 35px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.55);
+    backdrop-filter: blur(var(--painel-blur));
+}
+
+.logo-title {
+    font-family: "Cormorant Garamond", serif;
+    color: var(--dourado-claro);
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+/* ---------- PAINEL PRINCIPAL ---------- */
+.main-layout {
+    background: var(--painel-fundo);
+    backdrop-filter: blur(var(--painel-blur));
+    border-left: 2px solid rgba(255,255,255,0.05);
+    border-right: 2px solid rgba(255,255,255,0.05);
+    padding: 40px;
+    min-height: 100vh;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.65);
+}
+
+/* ---------- HEADER INTERNO ---------- */
+.dashboard-header {
+    background: rgba(30,22,15,0.75);
+    padding: 18px 25px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--card-borda);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.35);
+}
+
+.dashboard-header h2 {
+    margin-left: 15px;
+    font-size: 1.9rem;
+    color: var(--dourado);
+    font-family: "Cormorant Garamond", serif;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    color: var(--dourado);
+    cursor: pointer;
+}
+
+.user-info {
+    margin-left: auto;
+    color: var(--dourado-claro);
+}
+
+/* ---------- GRID ---------- */
+.content-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+
+/* ---------- CARDS ---------- */
+.card {
+    background: var(--card-fundo);
+    border-radius: 16px;
+    border: 1px solid var(--card-borda);
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    animation: aparecer .6s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.card-title {
+    font-size: 1.7rem;
+    font-family: "Cormorant Garamond", serif;
+    color: var(--dourado);
+    margin-bottom: 18px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--card-borda);
+}
+
+/* ---------- FORMULÁRIOS ---------- */
+label {
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    color: var(--dourado-claro);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--input-fundo);
+    border: 1px solid var(--input-borda);
+    color: var(--texto);
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+input:focus, select:focus {
+    border-color: var(--dourado);
+    outline: none;
+    box-shadow: 0 0 8px rgba(201,164,75,0.2);
+}
+
+/* ---------- BOTÕES ---------- */
+.btn {
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: var(--dourado);
+    color: var(--btn-texto);
+}
+.btn-primary:hover {
+    background: var(--dourado-claro);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: var(--texto);
+}
+.btn-danger:hover {
+    background: #cf5a58;
+}
+
+.btn-secondary {
+    background: #56442f;
+    color: var(--texto);
+}
+.btn-secondary:hover {
+    background: #6b5338;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* ---------- TABELAS ---------- */
+.cardapio-tabela {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse;
+}
+
+.cardapio-tabela th {
+    color: var(--dourado);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+}
+
+.cardapio-tabela td {
+    padding: 10px 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.tabela-imagem {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--card-borda);
+}
+
+/* ---------- LISTAS ---------- */
+.historico-lista {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.historico-lista li {
+    margin-bottom: 6px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.historico-lista li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--dourado-claro);
+}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .span-3, .span-2 {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 780px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    .span-3, .span-2 {
+        grid-column: span 1;
+    }
+}

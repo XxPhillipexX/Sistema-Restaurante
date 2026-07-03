@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Administração Essência Mineira</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="gerencia.css"> 
+</head>
+
+<body>
+    <div class="app-container">
+        
+        <header class="top-bar">
+            <h1 class="logo-title">Administração Essência Mineira</h1>
+        </header>
+
+        <div class="main-layout">
+            
+            <div class="dashboard-header">
+                <div class="menu-icon">≡</div>
+                <h2>Dashboard</h2>
+                <div class="user-info">Olá, Admin</div>
+            </div>
+
+            <main class="content-grid">
+
+                <section class="card" id="cardAdicionar">
+                    <h3 class="card-title">Adicionar Novo Produto</h3>
+                    
+                    <form id="formAdicionarItem">
+                        
+                        <div class="form-row">
+                            <label for="selectCategoriaAdicionar">Categoria:</label>
+                            <select id="selectCategoriaAdicionar" required></select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="inputAdicionarNome">Nome do Item:</label>
+                            <input type="text" id="inputAdicionarNome" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="inputAdicionarPreco">Preço (R$):</label>
+                            <input type="number" id="inputAdicionarPreco" step="0.01" min="0.01" placeholder="Ex: 29.90" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="inputAdicionarDescricao">Descrição (Texto):</label>
+                            <input type="text" id="inputAdicionarDescricao" placeholder="Breve descrição do item (Ex: Acompanha fritas)">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Adicionar ao Cardápio</button>
+                    </form>
+                </section>
+                
+                <section class="card" id="cardGerenciar">
+                    <h3 class="card-title">Gerenciar Produtos Existentes</h3>
+                    
+                    <form id="formAlterarItem">
+                        
+                        <div class="form-row">
+                            <label for="selectCategoria">Categoria:</label>
+                            <select id="selectCategoria" required></select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="selectItemAlterar">Item:</label>
+                            <select id="selectItemAlterar" required></select>
+                        </div>
+
+                        <hr class="separator">
+
+                        <h4>Alterar Dados:</h4>
+
+                        <div class="form-row">
+                            <label for="inputAlterarPreco">Novo Preço (R$):</label>
+                            <input type="number" id="inputAlterarPreco" step="0.01" min="0.01" placeholder="Preço Atual" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <label for="inputAlterarDescricao">Nova Descrição (Texto):</label>
+                            <input type="text" id="inputAlterarDescricao" placeholder="Descrição Atual">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Salvar Alterações</button>
+                    </form>
+                    
+                    <button id="btnExcluirItem" class="btn btn-danger btn-full mt-20">Excluir Item Selecionado</button>
+
+                </section>
+
+                <section class="card" id="cardHistorico">
+                    <h3 class="card-title">Relatório Rápido de Vendas</h3>
+                    
+                    <button class="btn btn-secondary btn-full" id="btnAtualizarHistorico">Atualizar Relatório</button>
+
+                    <h4>Mais Vendidos (Top 3)</h4>
+                    <ul id="maisVendidos" class="historico-lista"></ul>
+
+                    <h4>Menos Vendidos (Top 3)</h4>
+                    <ul id="menosVendidos" class="historico-lista"></ul>
+                </section>
+
+                <section class="card span-3" id="cardCardapio">
+                    <h3 class="card-title">Cardápio Completo</h3>
+                    
+                    <div class="form-row" style="max-width: 300px;">
+                        <label for="filtroCategoria">Mostrar Categoria:</label>
+                        <select id="filtroCategoria"></select>
+                    </div>
+
+                    <table class="cardapio-tabela">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Item</th>
+                                <th>Preço</th>
+                                <th>Vendas</th>
+                                <th class="col-img">Imagem</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaCorpo">
+                        </tbody>
+                    </table>
+                </section>
+                
+            </main>
+        </div>
+    </div>
+
+    <script src="gerencia.js"></script> 
+</body>
+</html>

@@ -1,0 +1,461 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nossa Equipe | Essência Mineira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Cabin", sans-serif;
+            margin: 0;
+            background: #A0522D;
+            color: #c16620;
+            padding-top: 8rem;
+        }
+
+        header {
+            background-image: url("Imagens Início/header.jpg");
+            background-size: cover;
+            color: #be5a20;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center; /* Centraliza verticalmente os itens no header */
+            justify-content: space-between; /* Empurra logo-nome e outros itens para os lados */
+            padding: 0.5rem;
+            z-index: 1000;
+            margin: 0;
+        }
+        h1 {
+          margin: 0;
+        }
+        .logo {
+            padding: 0;
+            width: 7rem;
+            height: 7rem;
+        }
+
+        .logo-nome {
+            display: flex;
+            flex-direction: row;
+            /* Remova ou ajuste esta margem se o logo for sobrepor o botão ao mover para a direita */
+            /* margin-left: 5rem; */
+        }
+
+        header div.nome p {
+            padding: 0;
+            color: #be5a20;
+            margin: 0;
+        }
+
+        .botao-voltar-container {
+            position: absolute; /* Posição absoluta dentro do header */
+            top: 50%; /* Centraliza verticalmente */
+            right: 2rem; /* AGORA ESTÁ AQUI: Margem da direita */
+            transform: translateY(-50%); /* Ajuste para centralização vertical perfeita */
+            z-index: 1001; /* Garante que o botão fique acima de outros elementos se houver sobreposição */
+            padding: 0;
+            margin: 0;
+          
+        }
+
+        .volta {
+            text-decoration: none;
+    color: #f0cda0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: color 0.3s ease;
+        }
+
+        a:hover {
+            border-color: #ca571d;
+            background-color: #ca571d;
+            border-radius: 8px;
+            color: #3c1701;
+        }
+
+        .chefs-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #47230d;
+        }
+
+        .chefs-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .chef-card {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .chef-card.active {
+            opacity: 1;
+        }
+
+        .chef-card img {
+            width: 300px;
+            height: auto;
+            border-radius: 60%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .chef-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .chef-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.4em;
+            color: #fdfdfd;
+        }
+
+        .chef-card p {
+            max-width: 500px;
+            margin: auto;
+            font-size: 1em;
+            color: #ffffff;
+        }
+
+        .nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ffffff;
+            color: rgb(0, 0, 0);
+            border: none;
+            font-size: 2rem;
+            padding: 10px 16px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .nav:hover {
+            opacity: 1;
+        }
+
+        .nav.left {
+            left: 10px;
+        }
+
+        .nav.right {
+            right: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .chef-card img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .chefs-section h2 {
+                font-size: 2em;
+            }
+        }
+
+        /* Blog Section */
+        .blog-section {
+            padding: 40px 20px;
+            background: #fff url('Equipe/Fundo.png') center/cover no-repeat;
+            text-align: center;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #c0392b;
+        }
+
+        .blog-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            width: 300px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .blog-card h3 {
+            font-size: 1.2em;
+            color: #c0392b;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .blog-card button {
+            background-color: #c0392b;
+            border: none;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .blog-card button:hover {
+            background-color: #a32c21;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            text-align: left;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h3 {
+            color: #c0392b;
+            margin-top: 0;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="botao-voltar-container">
+            <a class="volta" href="restaurante.php"><strong>⇦</strong></a>
+        </div>
+        <div class="logo-nome">
+            <img class="logo" src="Imagens Início/Logo EM.png" alt="logo">
+            <div class="nome">
+                <h1>Essência Mineira</h1>
+                <p>Restaurante Mineiro de Verdade</p>
+            </div>
+        </div>
+    </header>
+    <section class="chefs-section">
+        <h2>Conheça nosso time!</h2>
+        <div class="carousel-container">
+            <button class="nav left">&#10094;</button>
+
+            <div class="carousel">
+                <div class="chef-card active">
+                    <img src="Equipe/Vó Maria.jpg" alt="Chef Vó Maria" />
+                    <h3>Chef Vó Maria</h3>
+                    <p>A Vó Maria é raiz, Cruzeirense doente! Faz pão de queijo no olho e conta casos enquanto cozinha.</p>
+                </div>
+                <div class="chef-card">
+                    <img src="Equipe/luiz.png" alt="Chef Luiz Phelipe" />
+                    <h3>Chef Luiz Phelipe</h3>
+                    <p>Luiz é daqueles que cozinha cantando. Faz um arroz que até silêncio elogia.</p>
+                </div>
+                <div class="chef-card">
+                    <img src="Equipe/Sofia.jpg" alt="Chef Sofia Squarante" />
+                    <h3>Chef Sofia Squarante</h3>
+                    <p>A Sofia tem a manha de misturar tradição com novidade. Um tropeiro dela resolve o dia.</p>
+                </div>
+                <div class="chef-card">
+                    <img src="Equipe/Sara.jpg" alt="Chef Sara Squarante" />
+                    <h3>Chef Sara Squarante</h3>
+                    <p>Sara adoça tudo com carinho. Faz doce que parece abraço de vó.</p>
+                </div>
+                <div class="chef-card">
+                    <img src="Equipe/Phillipe.png" alt="Chef Phillipe Emanuel" />
+                    <h3>Chef Phillipe Emanuel</h3>
+                    <p>Phillipe já rodou o mundo, mas tempera tudo com jeitinho de roça.</p>
+                </div>
+                <div class="chef-card">
+                    <img src="Equipe/Thalles.png" alt="Chef Thalles Henrique" />
+                    <h3>Chef Thalles Henrique</h3>
+                    <p>Thalles é mestre da brasa. Carne no ponto, cheiro de lenha e conversa boa.</p>
+                </div>
+            </div>
+
+            <button class="nav right">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <h2>Blog dos Chefs</h2>
+        <div class="blog-cards">
+            <div class="blog-card">
+                <h3>Os segredos de um pão de queijo perfeito - Por Vó Maria</h3>
+                <p>Pão de queijo é arte e tradição. Vó Maria compartilha dicas para acertar na textura e no sabor.</p>
+                <button onclick="showBlogContent('vo-maria')">Leia Mais</button>
+            </div>
+            <div class="blog-card">
+                <h3>5 passos para um arroz incrível - Por Luiz Phelipe</h3>
+                <p>Luiz ensina os segredos para um arroz soltinho, aromático e cheio de sabor.</p>
+                <button onclick="showBlogContent('luiz-phelipe')">Leia Mais</button>
+            </div>
+            <div class="blog-card">
+                <h3>Tropeiro com um toque moderno - Por Sofia Squarante</h3>
+                <p>Sofia mostra como misturar tradição e inovação para criar um prato que encanta em qualquer ocasião.</p>
+                <button onclick="showBlogContent('sofia-squarante')">Leia Mais</button>
+            </div>
+            <div class="blog-card">
+                <h3>Doces que abraçam a alma - Por Sara Squarante</h3>
+                <p>Sara revela como transformar ingredientes simples em sobremesas inesquecíveis.</p>
+                <button onclick="showBlogContent('sara-squarante')">Leia Mais</button>
+            </div>
+            <div class="blog-card">
+                <h3>Temperos do mundo com sabor de casa - Por Phillipe Emanuel</h3>
+                <p>Phillipe compartilha como trazer influências globais para pratos que aquecem o coração.</p>
+                <button onclick="showBlogContent('phillipe-emanuel')">Leia Mais</button>
+            </div>
+            <div class="blog-card">
+                <h3>Segredos do churrasco perfeito - Por Thalles Henrique</h3>
+                <p>Thalles explica como dominar a brasa para criar carnes irresistíveis e inesquecíveis.</p>
+                <button onclick="showBlogContent('thalles-henrique')">Leia Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="blog-modal" class="modal" onclick="closeBlogModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-button" onclick="closeBlogModal()">&times;</span>
+            <div id="blog-details"></div>
+        </div>
+    </div>
+
+    <script>
+        // Animação de abertura
+        window.addEventListener('load', () => {
+            const intro = document.getElementById('intro-animation');
+            if (intro) {
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                }, 4000);
+            }
+        });
+
+        // Carrossel de chefs
+        const carousel = document.querySelector('.carousel');
+        const cards = document.querySelectorAll('.chef-card');
+        const prev = document.querySelector('.nav.left');
+        const next = document.querySelector('.nav.right');
+
+        let current = 0;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${current * 100}%)`;
+            cards.forEach((card, index) => {
+                card.classList.toggle('active', index === current);
+            });
+        }
+
+        prev.addEventListener('click', () => {
+            current = (current === 0) ? cards.length - 1 : current - 1;
+            updateCarousel();
+        });
+
+        next.addEventListener('click', () => {
+            current = (current === cards.length - 1) ? 0 : current + 1;
+            updateCarousel();
+        });
+
+        updateCarousel();
+
+        // Conteúdos completos dos blogs
+        const blogContents = {
+            'vo-maria': `
+                <h3>Os segredos de um pão de queijo perfeito - Por Vó Maria</h3>
+                <p>Fazer pão de queijo é uma tradição que passa de geração para geração. Vó Maria ensina que o segredo está na escolha do polvilho, na textura da massa e na hora certa de assar. O ponto ideal é quando eles estão douradinhos por fora e macios por dentro, com aquele aroma irresistível que só pão de queijo caseiro tem. Além disso, contar causos e histórias enquanto cozinha faz toda a diferença para o sabor ficar ainda mais especial.</p>
+            `,
+            'luiz-phelipe': `
+                <h3>5 passos para um arroz incrível - Por Luiz Phelipe</h3>
+                <p>Para Luiz, cozinhar arroz é uma arte que envolve ritmo e paciência. Primeiro, lave o arroz para tirar o excesso de amido. Depois, refogue alho e cebola em óleo ou manteiga, adicionando o arroz para fritar levemente. O segredo está na proporção certa de água e no tempo de cozimento, que deve ser feito em fogo baixo para o arroz ficar soltinho e perfumado. Luiz também recomenda deixar o arroz descansar tampado após o cozimento para que os grãos fiquem firmes e se separem facilmente.</p>
+            `,
+            'sofia-squarante': `
+                <h3>Tropeiro com um toque moderno - Por Sofia Squarante</h3>
+                <p>O prato tropeiro é um clássico da culinária mineira, mas Sofia gosta de dar uma repaginada. Ela sugere acrescentar ingredientes frescos e saudáveis, como couve crocante e tomate-cereja, para dar leveza ao prato. Além disso, usa temperos diferentes e reduz a gordura, mantendo o sabor e a tradição. Com essa mistura de tradição e inovação, o tropeiro dela é perfeito para quem quer saborear o passado com um olhar para o futuro.</p>
+            `,
+            'sara-squarante': `
+                <h3>Doces que abraçam a alma - Por Sara Squarante</h3>
+                <p>Os doces de Sara são mais que receitas, são abraços em forma de sabor. Ela utiliza ingredientes simples, mas prepara com muito carinho, resultando em sobremesas que lembram momentos felizes e aconchegantes. Desde um doce de leite caseiro até bolos fofinhos, Sara acredita que o segredo está na dedicação e no toque especial que só o amor na cozinha pode dar.</p>
+            `,
+            'phillipe-emanuel': `
+                <h3>Temperos do mundo com sabor de casa - Por Phillipe Emanuel</h3>
+                <p>Depois de viajar por diversos países, Phillipe traz para a cozinha de casa temperos e técnicas internacionais. Ele ensina como adaptar receitas exóticas para ingredientes locais, sem perder o sabor autêntico. O resultado são pratos surpreendentes, que combinam sabores globais com o aconchego da comida feita em casa.</p>
+            `,
+            'thalles-henrique': `
+                <h3>Segredos do churrasco perfeito - Por Thalles Henrique</h3>
+                <p>Para Thalles, o churrasco vai além da carne: é uma experiência de convivência e sabor. Ele compartilha dicas para escolher o corte ideal, preparar a brasa na medida certa e temperar sem exageros. A técnica de assar lentamente garante carne suculenta e macia, enquanto o cheiro da lenha cria uma atmosfera única que deixa tudo ainda mais especial.</p>
+            `
+        };
+
+        // Mostrar conteúdo do blog no modal
+        function showBlogContent(id) {
+            const modal = document.getElementById('blog-modal');
+            const blogDetails = document.getElementById('blog-details');
+            blogDetails.innerHTML = blogContents[id] || '<p>Conteúdo não encontrado.</p>';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // desabilita scroll do body ao abrir modal
+        }
+
+        // Fechar modal
+        function closeBlogModal(event) {
+            const modal = document.getElementById('blog-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // habilita scroll novamente3
+        }
+    </script>
+
+</body>
+</html>

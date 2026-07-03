@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Cabin", sans-serif;
+    background-image: url("Imagens Início/fundo-historia.jpg");
+    background-size: cover;
+    color: #833200;
+    font-weight: 400;
+    line-height: 1.6;
+}
+header {
+    background-image: url("Imagens Início/header.jpg");
+    color: #be5a20;
+    position: fixed;
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;
+    z-index: 9999;
+    top: 0%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo{
+    padding: 0;
+    width: 7rem;
+    height: 7rem;
+}
+
+.logo-nome {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Vertically align logo and name */
+}
+
+header div.nome p {
+    padding: 0;
+    color: #be5a20;
+    font-size: 1rem; /* Adjusted subtitle size */
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    top: auto;
+    bottom: auto;
+    justify-content: center; /* Center nav items */
+}
+a {
+    text-decoration: none;
+    color: #f0cda0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* Smooth transitions for hover */
+}
+a:hover {
+    border: 3px solid #ca571d;
+    background-color: #ca571d;
+    border-radius: 8px;
+    color: #3c1701;
+}
+.voltar {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 1001;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin-top: 13rem;
+    border: #ca571d solid 3px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fffdf5;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+main h1 {
+    color: #be5a20;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+main pre {
+    white-space: pre-wrap; /* Ensures text wraps within the pre tag */
+    font-size: 1.1rem;
+    color: #5a2700;
+    text-align: justify; /* Justify text for a cleaner look */
+    line-height: 1.8; /* Improved line spacing for readability */
+}

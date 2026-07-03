@@ -1,0 +1,314 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Cabin", sans-serif;
+    background-color: #fffcd0;
+    color: #833200;
+    font-weight: 400;
+}
+header {
+    background-image: url("Imagens Início/header.jpg");
+    background-size: cover;
+    color: #be5a20;
+    position: fixed;
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+header div.nome p {
+    color: #be5a20;
+}
+div {
+    padding: 0.5rem;
+}
+.logo-nome {
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    padding: 0;
+    width: 7rem;
+    height: 7rem;
+}
+.nome {
+    text-align: left;
+}
+.navegacao {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+a {
+    text-decoration: none;
+    color: #f0cda0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    transition: color 0.3s ease;
+}
+a:hover {
+    border: 3px solid #ca571d;
+    background-color: #ca571d;
+    border-radius: 8px;
+    color: #3c1701;
+}
+section {
+    text-align: center;
+    padding: 4rem;
+    align-items: center;
+}
+.entrada {
+    background-image: url("Imagens Início/restaurante.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ece4e4;
+    padding: 300px 20px;
+}
+h2 {
+    font-size: 3rem;
+    padding: 0.5rem;
+    color: #f3b251;
+}
+.entrada h2 {
+    font-size: 5rem;
+    color: #ece4e4;
+}
+#contato {
+    background-color: #ffedd2;
+}
+p {
+    color: #3c1701;
+    font-size: 1.5rem;
+}
+.destaque {
+    font-size: 2rem;
+    color: #572102;
+    padding: 0.3rem;
+}
+#local {
+    background-color: #ffe7c2;
+}
+#promoções {
+    background-color: #ffedd2;
+}
+.promoções {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.promo {
+    border: 3px solid #ca571d;
+    padding: 20px;
+    background-color: #fff6ee;
+    border-radius: 8px;
+    margin: 5px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.promo img {
+    width: 24rem;
+    height: 17rem;
+    border-radius: 8px;
+}
+h3 {
+    color: #be5a20;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.promo p {
+    color: #3c1701;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+#horario {
+    background-color: #ffe7c2;
+}
+.horarios {
+    border: 3px solid #ca571d;
+    padding: 20px;
+    max-width: 70rem;
+    background-color: #fff6ee;
+    border-radius: 8px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+div.horarios p {
+    font-size: 2rem;
+}
+footer {
+    padding: 4rem;
+    background-color: #3c1701;
+    text-align: center;
+}
+footer p {
+    font-size: 2rem;
+    color: #ffedd2;
+}
+#fotos {
+    background-color: #ffe7c2;
+}
+.pratos {
+    display: flex;
+    flex-direction: column;
+}
+.pratos3 {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.pratos3 div {
+    padding: 10px;
+    background-color: #fff6ee;
+    border-radius: 8px;
+    margin: 5px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.pratos2 {
+    display: flex;
+    flex-direction: row;
+}
+.pratos2 div {
+    padding: 10px;
+    background-color: #fff6ee;
+    border-radius: 8px;
+    margin: 5px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.pratos3 img {
+    width: 24rem;
+    height: 19rem;
+    border-radius: 8px;
+}
+.pratos2 img {
+    width: 39rem;
+    height: 23rem;
+    border-radius: 8px;
+}
+.obs {
+    color: #3c1701;
+    font-size: 0.5rem;
+}
+/*
+ * *****************************************************************
+ * ESTILOS PARA TELAS MENORES (Responsividade / Mobile)
+ * Máximo de 768px de largura (Celulares e Tablets)
+ * *****************************************************************
+ */
+@media (max-width: 768px) {
+    /* Ajustes Gerais */
+    body {
+        font-size: 14px; /* Fonte ligeiramente menor */
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    .destaque {
+        font-size: 1.5rem;
+    }
+    section {
+        padding: 2rem 1rem; /* Reduz o padding nas laterais */
+    }
+
+    /* Ajustes do Header */
+    header {
+        flex-direction: column; /* Coloca o logo/nome em cima da navegação */
+        position: static; /* Remove o fixed para não ocupar toda a tela ao rolar */
+        font-size: 1.2rem;
+    }
+    .logo-nome {
+        justify-content: center;
+    }
+    .logo {
+        width: 5rem;
+        height: 5rem;
+    }
+    .nome h1 {
+        font-size: 1.5rem;
+    }
+    .nome p {
+        font-size: 1rem;
+    }
+    .nav nav {
+        flex-direction: column; /* Coloca os links um abaixo do outro */
+        text-align: center;
+        padding-top: 0;
+    }
+    .nav nav div {
+        display: flex; /* Mantém os links em linha, mas a navegação principal é coluna */
+        flex-wrap: wrap; /* Permite que os links quebrem a linha se necessário */
+        justify-content: center;
+    }
+    a {
+        padding: 0.3rem 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    a:hover {
+        border-width: 1px;
+    }
+
+    /* Ajustes da Seção Entrada */
+    .entrada {
+        padding: 150px 10px;
+    }
+    .entrada h2 {
+        font-size: 3rem;
+    }
+
+    /* Ajustes da Seção Pratos Principais (#fotos) */
+    .pratos3, .pratos2 {
+        flex-direction: column; /* Empilha os pratos verticalmente */
+        gap: 1rem;
+    }
+    .pratos3 div, .pratos2 div {
+        margin: 10px 0; /* Espaço entre os itens empilhados */
+    }
+    .pratos3 img, .pratos2 img {
+        width: 100%; /* Imagem ocupa a largura total do seu container */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+
+    /* Ajustes da Seção Promoções (#promoções) */
+    .promoções {
+        flex-direction: column; /* Empilha as promoções verticalmente */
+        gap: 1.5rem;
+    }
+    .promo {
+        margin: 10px 0;
+    }
+    .promo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ajustes do Horário de Funcionamento (#horario) */
+    .horarios {
+        max-width: 90%; /* Ocupa mais largura na tela */
+        padding: 10px;
+    }
+    div.horarios p {
+        font-size: 1.2rem;
+    }
+
+    /* Ajustes do Footer */
+    footer p {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+}

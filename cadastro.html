@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Cadastro | Essência Mineira</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <div class="card" role="main">
+    <h2>Criar Conta</h2>
+
+    <form id="cadastroForm">
+        <label for="nome">Nome Completo</label>
+        <input id="nome" type="text" placeholder="Seu Nome" required>
+
+        <label for="telefone">Telefone (apenas números)</label>
+        <input id="telefone" type="tel" placeholder="31998765432" pattern="[0-9]{10,11}" required>
+        
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="seu@exemplo.com" required>
+
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="No mínimo 6 caracteres" required>
+
+        <label for="endereco">Endereço Completo</label>
+        <input id="endereco" type="text" placeholder="Rua, Número, Bairro" required>
+        
+        <label for="cpf">CPF (apenas números)</label>
+        <input id="cpf" type="text" placeholder="00011122233" pattern="[0-9]{11}" required>
+        
+        <button type="submit" class="btn">Cadastrar</button>
+    </form>
+
+    <a class="link" href="login.html">Já tenho uma conta</a>
+
+    <div id="msg" class="small"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

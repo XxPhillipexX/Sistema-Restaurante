@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Login | Essência Mineira</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="card" role="main">
+    <h2>Entrar</h2>
+
+    <form id="loginForm">
+        <label for="email_login">E-mail</label>
+        <input id="email_login" type="email" placeholder="seu@exemplo.com" required>
+
+        <label for="senha_login">Senha</label>
+        <input id="senha_login" type="password" placeholder="Sua senha" required>
+
+        <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <a class="link" href="cadastro.html">Criar nova conta</a>
+
+    <div id="msg_login" class="small"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
